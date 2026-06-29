@@ -13,10 +13,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/auth", require("./authRoutes"));
 
 // Protected test route
-const protect = require("./middleware/authMiddleware");
+const protect = require("./authMiddleware");
 app.get("/api/dashboard", protect, (req, res) => {
   res.json({
     message: "Welcome to Dayboard dashboard",
